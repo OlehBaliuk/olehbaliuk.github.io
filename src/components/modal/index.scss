@@ -22,16 +22,16 @@
     padding: 20px;
     border-radius: 10px;
     background-color: white;
-    width: 30%;
+    width: 40%;
     min-height: 150px;
     transform: scale(0.5);
     transition: 0.4s all;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .modal__content.active {
     transform: scale(1);
-    color: red;
 }

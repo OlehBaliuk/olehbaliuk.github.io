@@ -1,4 +1,4 @@
-.user-title {
+.users-title {
     padding-top: 20px;
 }
 
@@ -6,6 +6,11 @@
     margin: 0 auto;
     width: 30%;
     padding: 20px;
+
+    p {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .user-item {
@@ -13,8 +18,25 @@
     justify-content: space-between;
     position: relative;
     padding: 10px;
-    margin: 8px;
+    margin: 10px;
     background: #d5d2d2;
     text-decoration: none;
     border-radius: 0.3em;
+}
+
+.button {
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 80px;
+    margin: 0 5px;
+}
+
+.album-container {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }

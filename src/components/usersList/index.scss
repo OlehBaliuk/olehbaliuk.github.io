@@ -1,0 +1,20 @@
+.user-title {
+    padding-top: 20px;
+}
+
+.users-list {
+    margin: 0 auto;
+    width: 30%;
+    padding: 20px;
+}
+
+.user-item {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 8px;
+    background: #d5d2d2;
+    text-decoration: none;
+    border-radius: 0.3em;
+}

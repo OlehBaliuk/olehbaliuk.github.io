@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import UsersList from '../../components/usersList/UsersList';
-import { getUsers } from '../../store/usersSlice';
+import { useMainPage } from './useMainPage';
 
 const MainPage = () => {
-    const dispatch = useDispatch();
-    const users = useSelector(state => state.users.users);
+    const { users } = useMainPage();
 
-    useEffect(() => {
-        dispatch(getUsers());
-    }, []);
-
-    return (
-        <>
-            <UsersList users={users} />
-        </>
-    );
+    return <UsersList users={users} />;
 };
 
 export default MainPage;

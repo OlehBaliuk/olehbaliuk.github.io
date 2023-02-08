@@ -1,23 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import Modal from '../modal/Modal';
+import { useUserList } from './useUserList';
 import './index.scss';
 
 const UsersList = ({ users }) => {
-    const [activeModal, setActiveModal] = useState(false);
-    const [albums, setAlbums] = useState([]);
-    let navigate = useNavigate();
-
-    const handleClickPosts = user => {
-        navigate(`/posts/${user.id}`);
-    };
-
-    const handleClickAlbums = async user => {
-        const { data } = await axios.get(`https://jsonplaceholder.typicode.com/albums?userId=${user.id}`);
-        setAlbums(data);
-        setActiveModal(true);
-    };
+    const { activeModal, albums, handleClickPosts, handleClickAlbums, setActiveModal } = useUserList();
 
     return (
         <>
@@ -37,10 +24,11 @@ const UsersList = ({ users }) => {
                     </li>
                 ))}
             </ul>
+
             <Modal active={activeModal} setActive={setActiveModal}>
                 <h1>Albums</h1>
                 {albums?.map(album => (
-                    <div className="album-container">
+                    <div className="album-container" key={album.id}>
                         <p>{album.title}</p>
                     </div>
                 ))}

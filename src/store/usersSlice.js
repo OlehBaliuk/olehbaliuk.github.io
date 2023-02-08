@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { api } from '../api/api';
 
 const initialState = {
     users: [],
@@ -18,8 +18,8 @@ export const usersSlice = createSlice({
 export const { setUsers } = usersSlice.actions;
 
 export const getUsers = () => async dispatch => {
-    const { data } = await axios.get('https://jsonplaceholder.typicode.com/users');
-    dispatch(setUsers(data));
+    const response = await api.getUsers();
+    dispatch(setUsers(response));
 };
 
 export default usersSlice.reducer;

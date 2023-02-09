@@ -31,6 +31,10 @@
     padding: 5px;
     width: 80px;
     margin: 0 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .album-container {

@@ -5,6 +5,7 @@ import MainPage from './pages/mainPage/MainPage';
 import Posts from './pages/posts/Posts';
 import Header from './components/header/Header';
 import { store } from './store/store';
+import { ROUTES } from './constants/routes';
 import './App.scss';
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
             <div className="App">
                 <Header />
                 <Routes>
-                    <Route path="/" element={<MainPage />}></Route>
-                    <Route path="/posts/:userId" element={<Posts />}></Route>
+                    <Route path={ROUTES.mainPage} element={<MainPage />}></Route>
+                    <Route path={`${ROUTES.posts}/:userId`} element={<Posts />}></Route>
                 </Routes>
             </div>
         </Provider>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../api/api';
+import { ROUTES } from '../../constants/routes';
 
 export const useUserList = () => {
     const [activeModal, setActiveModal] = useState(false);
@@ -8,7 +9,7 @@ export const useUserList = () => {
     let navigate = useNavigate();
 
     const handleClickPosts = user => {
-        navigate(`/posts/${user.id}`);
+        navigate(`${ROUTES.posts}/${user.id}`);
     };
 
     const handleClickAlbums = async user => {

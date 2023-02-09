@@ -13,9 +13,13 @@ export const useUserList = () => {
     };
 
     const handleClickAlbums = async user => {
-        const response = await api.getAlbums(user);
-        setAlbums(response);
-        setActiveModal(true);
+        try {
+            const response = await api.getAlbums(user);
+            setAlbums(response);
+            setActiveModal(true);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return { activeModal, albums, handleClickPosts, handleClickAlbums, setActiveModal };

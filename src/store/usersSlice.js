@@ -18,8 +18,12 @@ export const usersSlice = createSlice({
 export const { setUsers } = usersSlice.actions;
 
 export const getUsers = () => async dispatch => {
-    const response = await api.getUsers();
-    dispatch(setUsers(response));
+    try {
+        const response = await api.getUsers();
+        dispatch(setUsers(response));
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 export default usersSlice.reducer;

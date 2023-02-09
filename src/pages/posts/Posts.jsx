@@ -1,12 +1,15 @@
 import React from 'react';
 import Post from '../../components/post/Post';
+import Preloader from '../../components/preloader/Preloader';
 import './index.scss';
 import { usePosts } from './usePosts';
 
 const Posts = () => {
-    const { posts } = usePosts();
+    const { posts, loading } = usePosts();
 
-    return (
+    return loading ? (
+        <Preloader />
+    ) : (
         <>
             <h1 className="posts-title">Posts</h1>
             {posts?.map(post => (
